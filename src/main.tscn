@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://nh17el7gsgfm"]
+
+[ext_resource type="Script" path="res://src/main.gd" id="1_rermx"]
+[ext_resource type="PackedScene" uid="uid://enyl4edfjpqe" path="res://src/board_design.tscn" id="3_qt60o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lp765"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_rermx")
+
+[node name="Board_Design" parent="." instance=ExtResource("3_qt60o")]
+position = Vector2(352, 344)
+
+[node name="Buttons" type="Node" parent="Board_Design"]
+
+[node name="1" type="TouchScreenButton" parent="Board_Design/Buttons"]
+position = Vector2(184, 176)
+scale = Vector2(7.505, 7.505)
+shape = SubResource("RectangleShape2D_lp765")
+
+[node name="2" type="TouchScreenButton" parent="Board_Design/Buttons"]
+position = Vector2(352, 176)
+scale = Vector2(7.505, 7.505)
+shape = SubResource("RectangleShape2D_lp765")
+
+[node name="3" type="TouchScreenButton" parent="Board_Design/Buttons"]
+position = Vector2(520, 176)
+scale = Vector2(7.505, 7.505)
+shape = SubResource("RectangleShape2D_lp765")
+
+[node name="4" type="TouchScreenButton" parent="Board_Design/Buttons"]
+position = Vector2(184, 344)
+scale = Vector2(7.505, 7.505)
+shape = SubResource("RectangleShape2D_lp765")
+
+[node name="5" type="TouchScreenButton" parent="Board_Design/Buttons"]
+position = Vector2(352, 344)
+scale = Vector2(7.505, 7.505)
+shape = SubResource("RectangleShape2D_lp765")
+
+[node name="6" type="TouchScreenButton" parent="Board_Design/Buttons"]
+position = Vector2(512, 344)
+scale = Vector2(7.505, 7.505)
+shape = SubResource("RectangleShape2D_lp765")
+
+[node name="7" type="TouchScreenButton" parent="Board_Design/Buttons"]
+position = Vector2(184, 512)
+scale = Vector2(7.505, 7.505)
+shape = SubResource("RectangleShape2D_lp765")
+
+[node name="8" type="TouchScreenButton" parent="Board_Design/Buttons"]
+position = Vector2(352, 512)
+scale = Vector2(7.505, 7.505)
+shape = SubResource("RectangleShape2D_lp765")
+
+[node name="9" type="TouchScreenButton" parent="Board_Design/Buttons"]
+position = Vector2(520, 512)
+scale = Vector2(7.505, 7.505)
+shape = SubResource("RectangleShape2D_lp765")
+
+[connection signal="released" from="Board_Design/Buttons/1" to="." method="_on_1_released"]
+[connection signal="released" from="Board_Design/Buttons/2" to="." method="_on_2_released"]
+[connection signal="released" from="Board_Design/Buttons/3" to="." method="_on_3_released"]
+[connection signal="released" from="Board_Design/Buttons/4" to="." method="_on_4_released"]
+[connection signal="released" from="Board_Design/Buttons/5" to="." method="_on_5_released"]
+[connection signal="released" from="Board_Design/Buttons/6" to="." method="_on_6_released"]
+[connection signal="released" from="Board_Design/Buttons/7" to="." method="_on_7_released"]
+[connection signal="released" from="Board_Design/Buttons/8" to="." method="_on_8_released"]
+[connection signal="released" from="Board_Design/Buttons/9" to="." method="_on_9_released"]
