@@ -22,34 +22,43 @@ func new_game():
 	]
 
 func _on_1_released():
+	print("click")
 	pass # Replace with function body.
 
 func _on_2_released():
+	print("click")
 	pass # Replace with function body.
 
 func _on_3_released():
+	print("click")
 	pass # Replace with function body.
 
 
 func _on_4_released():
+	print("click")
 	pass # Replace with function body.
 
 
 func _on_5_released():
+	print("click")
 	pass # Replace with function body.
 
 
 func _on_6_released():
+	print("click")
 	pass # Replace with function body.
 
 
 func _on_7_released():
+	print("click")
 	pass # Replace with function body.
 
 
 func _on_8_released():
+	print("click")
 	pass # Replace with function body.
 
 
 func _on_9_released():
+	print("click")
 	pass # Replace with function body.

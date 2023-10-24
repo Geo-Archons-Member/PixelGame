@@ -39,7 +39,7 @@ scale = Vector2(7.505, 7.505)
 shape = SubResource("RectangleShape2D_lp765")
 
 [node name="6" type="TouchScreenButton" parent="Board_Design/Buttons"]
-position = Vector2(512, 344)
+position = Vector2(520, 344)
 scale = Vector2(7.505, 7.505)
 shape = SubResource("RectangleShape2D_lp765")
 
