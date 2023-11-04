@@ -23,7 +23,7 @@ jobs:
         env:
           GITHUB_USER: "JASHiNSENNiN"
           REPO: "PixTacToe"
-          FORMAT: "zip"
+          FORMAT: "apk"
           VERSION: "${{ steps.get-latest-release.outputs.tag_name }}"
           COLOR: "blue"
           BEGIN_TAG: "\n\n<!-- BEGIN LATEST DOWNLOAD BUTTON -->"
