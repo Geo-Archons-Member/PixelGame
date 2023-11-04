@@ -22,8 +22,8 @@ jobs:
       - name: Readme Download Button Action
         env:
           GITHUB_USER: "JASHiNSENNiN"
-          REPO: "https://github.com/JASHiNSENNiN/PixTacToe"
-          FORMAT: "apk"
+          REPO: "PixTacToe"
+          FORMAT: "zip"
           VERSION: "${{ steps.get-latest-release.outputs.tag_name }}"
           COLOR: "blue"
           BEGIN_TAG: "\n\n<!-- BEGIN LATEST DOWNLOAD BUTTON -->"
