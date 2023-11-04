@@ -2,6 +2,9 @@
 
 A simple tiktaktoe game made with godot 4
 
+<!-- BEGIN LATEST DOWNLOAD BUTTON -->
+<!-- END LATEST DOWNLOAD BUTTON -->
+
 ## Gameplay
 
 Players take turns placing their marks on the 3x3 grid. The first player to get three of their marks in a row (up, down, left, right, or diagonally) wins the game.
