@@ -28,8 +28,8 @@ Players take turns placing their marks on the 3x3 grid. The first player to get 
 
 ## Credits
 
-https://free-game-assets.itch.io/free-summer-pixel-art-backgrounds?download
-https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack
-https://kronbits.itch.io/freesfx
-https://humblepixel.itch.io/pocket-inventory-series-5-player-status/devlog/511319/free-paper-ui-system
-https://www.youtube.com/watch?v=g1Q_2n54tCk&ab_channel=8BitBoi
+- https://free-game-assets.itch.io/free-summer-pixel-art-backgrounds?download
+- https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack
+- https://kronbits.itch.io/freesfx
+- https://humblepixel.itch.io/pocket-inventory-series-5-player-status/devlog/511319/free-paper-ui-system
+- https://www.youtube.com/watch?v=g1Q_2n54tCk&ab_channel=8BitBoi
