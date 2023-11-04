@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkieiqq3enurh"]
+[gd_scene load_steps=5 format=3 uid="uid://dkieiqq3enurh"]
 
-[ext_resource type="Texture2D" uid="uid://bh3ww3i3dkqwq" path="res://assets/x.png" id="1_aqf4m"]
+[ext_resource type="Texture2D" uid="uid://c7taoqgjhisat" path="res://assets/blank.png" id="1_1kwyb"]
+[ext_resource type="Texture2D" uid="uid://dio6ljoyc5v5y" path="res://assets/x.png" id="1_aqf4m"]
+[ext_resource type="Script" path="res://src/cross.gd" id="3_y32k6"]
 
-[node name="Cross" type="Sprite2D"]
-texture = ExtResource("1_aqf4m")
+[sub_resource type="SpriteFrames" id="SpriteFrames_ts44m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1kwyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_1kwyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_aqf4m")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cross" type="AnimatedSprite2D"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ts44m")
+script = ExtResource("3_y32k6")

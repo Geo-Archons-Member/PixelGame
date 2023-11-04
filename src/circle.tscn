@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://jkl78d5klc16"]
+[gd_scene load_steps=5 format=3 uid="uid://jkl78d5klc16"]
 
-[ext_resource type="Texture2D" uid="uid://hbha7jc41fxn" path="res://assets/o.png" id="1_t8lrg"]
+[ext_resource type="Texture2D" uid="uid://c7taoqgjhisat" path="res://assets/blank.png" id="1_5smlm"]
+[ext_resource type="Texture2D" uid="uid://c7y8hltn6u8wt" path="res://assets/o.png" id="1_t8lrg"]
+[ext_resource type="Script" path="res://src/circle.gd" id="3_wcchp"]
 
-[node name="Circle" type="Sprite2D"]
-texture = ExtResource("1_t8lrg")
+[sub_resource type="SpriteFrames" id="SpriteFrames_pi7w7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5smlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_5smlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_t8lrg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Circle" type="AnimatedSprite2D"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_pi7w7")
+frame = 2
+frame_progress = 1.0
+script = ExtResource("3_wcchp")

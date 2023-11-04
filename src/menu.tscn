@@ -1,0 +1,363 @@
+[gd_scene load_steps=22 format=3 uid="uid://utcf1fohb4hu"]
+
+[ext_resource type="Script" path="res://src/menu.gd" id="1_drult"]
+[ext_resource type="PackedScene" uid="uid://bqpf2rtbk1r85" path="res://src/background.tscn" id="2_ive5c"]
+[ext_resource type="Texture2D" uid="uid://2sixywkggwp5" path="res://assets/Book Desk/6.png" id="3_daadn"]
+[ext_resource type="Texture2D" uid="uid://1kjau5s7vilw" path="res://assets/Book Desk/5.png" id="4_b57oq"]
+[ext_resource type="FontFile" uid="uid://u7qtug5i1byw" path="res://assets/ThaleahFat.ttf" id="5_5wwpi"]
+[ext_resource type="AudioStream" uid="uid://d0jmlya0ok3wj" path="res://button.wav" id="6_cdi3e"]
+[ext_resource type="AudioStream" uid="uid://cm38qxdjues3r" path="res://bgm.wav" id="7_uo8t0"]
+[ext_resource type="Texture2D" uid="uid://dio6ljoyc5v5y" path="res://assets/x.png" id="8_vg25e"]
+[ext_resource type="Texture2D" uid="uid://c7y8hltn6u8wt" path="res://assets/o.png" id="9_nw5g6"]
+
+[sub_resource type="Animation" id="Animation_rbnsh"]
+resource_name = "camera"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -216), Vector2(0, 0), Vector2(0, -216)]
+}
+
+[sub_resource type="Animation" id="Animation_mat45"]
+resource_name = "intro"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(128, -200), Vector2(128, 24), Vector2(128, 56), Vector2(128, 24), Vector2(128, 24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tak:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.4, 0.6, 0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(368, -200), Vector2(368, 48), Vector2(368, 64), Vector2(368, 48), Vector2(368, 48)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Toe:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 0.7, 0.9, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(680, -200), Vector2(680, 24), Vector2(680, 48), Vector2(680, 24), Vector2(680, 24)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7sfvy"]
+_data = {
+"camera": SubResource("Animation_rbnsh"),
+"intro": SubResource("Animation_mat45")
+}
+
+[sub_resource type="Animation" id="Animation_uwo3a"]
+resource_name = "exit_settings"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("settings_marker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1415, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1t37w"]
+resource_name = "open_settings"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("settings_marker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1415, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dwnj5"]
+_data = {
+"exit_settings": SubResource("Animation_uwo3a"),
+"open_settings": SubResource("Animation_1t37w")
+}
+
+[sub_resource type="Theme" id="Theme_8etxy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5pph7"]
+texture = ExtResource("3_daadn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w1e8o"]
+texture = ExtResource("4_b57oq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ke8xr"]
+texture = ExtResource("3_daadn")
+modulate_color = Color(1, 1, 1, 0.639216)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2sgi6"]
+font = ExtResource("5_5wwpi")
+font_size = 70
+font_color = Color(0.988235, 0.862745, 0.611765, 1)
+outline_size = 10
+outline_color = Color(0.266667, 0.184314, 0.0941176, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u4v0y"]
+font = ExtResource("5_5wwpi")
+font_size = 200
+outline_size = 10
+outline_color = Color(0.313726, 0.266667, 0.266667, 1)
+
+[node name="Node" type="Node"]
+script = ExtResource("1_drult")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_ive5c")]
+
+[node name="button" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_cdi3e")
+bus = &"SFX"
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_uo8t0")
+autoplay = true
+bus = &"BGM"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(0.965, 0.965)
+
+[node name="title" type="AnimationPlayer" parent="Camera2D"]
+root_node = NodePath("../Tik")
+libraries = {
+"": SubResource("AnimationLibrary_7sfvy")
+}
+
+[node name="camera" type="AnimationPlayer" parent="Camera2D"]
+root_node = NodePath("../Tik")
+libraries = {
+"": SubResource("AnimationLibrary_7sfvy")
+}
+
+[node name="settings_marker" type="Marker2D" parent="Camera2D"]
+
+[node name="settings_animation" type="AnimationPlayer" parent="Camera2D/settings_marker"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_dwnj5")
+}
+
+[node name="Play" type="Button" parent="Camera2D/settings_marker"]
+offset_left = 360.0
+offset_top = 288.0
+offset_right = 712.0
+offset_bottom = 390.0
+theme = SubResource("Theme_8etxy")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_5wwpi")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_5pph7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w1e8o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ke8xr")
+text = "Play"
+
+[node name="Settings" type="Button" parent="Camera2D/settings_marker"]
+offset_left = 360.0
+offset_top = 421.0
+offset_right = 712.0
+offset_bottom = 515.0
+theme = SubResource("Theme_8etxy")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_5wwpi")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_5pph7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w1e8o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ke8xr")
+text = "Settings"
+
+[node name="SFX" type="Label" parent="Camera2D/settings_marker"]
+offset_left = 1648.0
+offset_top = 328.0
+offset_right = 2086.0
+offset_bottom = 423.0
+text = "Sound effects"
+label_settings = SubResource("LabelSettings_2sgi6")
+
+[node name="BGM" type="Label" parent="Camera2D/settings_marker"]
+offset_left = 1648.0
+offset_top = 448.0
+offset_right = 2173.0
+offset_bottom = 543.0
+text = "Background music"
+label_settings = SubResource("LabelSettings_2sgi6")
+
+[node name="sfx_toggle" type="Button" parent="Camera2D/settings_marker"]
+offset_left = 2224.0
+offset_top = 320.0
+offset_right = 2320.0
+offset_bottom = 408.0
+theme = SubResource("Theme_8etxy")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_5wwpi")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_5pph7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w1e8o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ke8xr")
+
+[node name="O" type="Sprite2D" parent="Camera2D/settings_marker/sfx_toggle"]
+visible = false
+position = Vector2(48, 40)
+scale = Vector2(4, 4)
+texture = ExtResource("9_nw5g6")
+
+[node name="X" type="Sprite2D" parent="Camera2D/settings_marker/sfx_toggle"]
+position = Vector2(48, 40)
+scale = Vector2(4, 4)
+texture = ExtResource("8_vg25e")
+
+[node name="bgm_toggle" type="Button" parent="Camera2D/settings_marker"]
+offset_left = 2224.0
+offset_top = 440.0
+offset_right = 2320.0
+offset_bottom = 528.0
+theme = SubResource("Theme_8etxy")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_5wwpi")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_5pph7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w1e8o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ke8xr")
+
+[node name="O" type="Sprite2D" parent="Camera2D/settings_marker/bgm_toggle"]
+visible = false
+position = Vector2(48, 40)
+scale = Vector2(4, 4)
+texture = ExtResource("9_nw5g6")
+
+[node name="X" type="Sprite2D" parent="Camera2D/settings_marker/bgm_toggle"]
+position = Vector2(48, 40)
+scale = Vector2(4, 4)
+texture = ExtResource("8_vg25e")
+
+[node name="back" type="Button" parent="Camera2D/settings_marker"]
+offset_left = 1824.0
+offset_top = 568.0
+offset_right = 2176.0
+offset_bottom = 649.0
+theme = SubResource("Theme_8etxy")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_5wwpi")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_5pph7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w1e8o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ke8xr")
+text = "back
+"
+
+[node name="Quit" type="Button" parent="Camera2D/settings_marker"]
+offset_left = 360.0
+offset_top = 548.0
+offset_right = 712.0
+offset_bottom = 629.0
+theme = SubResource("Theme_8etxy")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_5wwpi")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_5pph7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w1e8o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ke8xr")
+text = "Quit"
+
+[node name="Tik" type="Label" parent="Camera2D"]
+offset_left = 128.0
+offset_top = -200.0
+offset_right = 384.0
+offset_bottom = -13.0
+text = "Tik"
+label_settings = SubResource("LabelSettings_u4v0y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tak" type="Label" parent="Camera2D"]
+offset_left = 368.0
+offset_top = -200.0
+offset_right = 712.0
+offset_bottom = -13.0
+text = "Tak"
+label_settings = SubResource("LabelSettings_u4v0y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Toe" type="Label" parent="Camera2D"]
+offset_left = 680.0
+offset_top = -200.0
+offset_right = 1016.0
+offset_bottom = -13.0
+text = "Toe
+"
+label_settings = SubResource("LabelSettings_u4v0y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Camera2D/settings_marker/Play" to="." method="_on_play_button_down"]
+[connection signal="button_up" from="Camera2D/settings_marker/Play" to="." method="_on_play_button_up"]
+[connection signal="button_down" from="Camera2D/settings_marker/Settings" to="." method="_on_settings_button_down"]
+[connection signal="button_up" from="Camera2D/settings_marker/Settings" to="." method="_on_settings_button_up"]
+[connection signal="button_down" from="Camera2D/settings_marker/sfx_toggle" to="." method="_on_sfx_toggle_button_down"]
+[connection signal="button_up" from="Camera2D/settings_marker/sfx_toggle" to="." method="_on_sfx_toggle_button_up"]
+[connection signal="button_down" from="Camera2D/settings_marker/bgm_toggle" to="." method="_on_bgm_toggle_button_down"]
+[connection signal="button_up" from="Camera2D/settings_marker/bgm_toggle" to="." method="_on_bgm_toggle_button_up"]
+[connection signal="button_down" from="Camera2D/settings_marker/back" to="." method="_on_back_button_down"]
+[connection signal="button_up" from="Camera2D/settings_marker/back" to="." method="_on_back_button_up"]
+[connection signal="button_up" from="Camera2D/settings_marker/Quit" to="." method="_on_quit_button_up"]

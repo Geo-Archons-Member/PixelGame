@@ -10,14 +10,23 @@ config_version=5
 
 [application]
 
-config/name="tiktaktoe"
+config/name="PixTacToe"
+run/main_scene="res://src/menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
+boot_splash/show_image=false
+boot_splash/image="res://assets/icon.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="res://assets/icon.png"
 
 [display]
 
 window/size/viewport_width=1080
 window/size/viewport_height=720
-window/handheld/orientation=1
+window/size/mode=3
+window/size/borderless=true
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
 
 [input_devices]
 
@@ -27,3 +36,4 @@ pointing/emulate_touch_from_mouse=true
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

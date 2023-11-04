@@ -1,12 +1,252 @@
-[gd_scene load_steps=4 format=3 uid="uid://nh17el7gsgfm"]
+[gd_scene load_steps=51 format=3 uid="uid://cvubjqwq5tl4g"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_rermx"]
+[ext_resource type="PackedScene" uid="uid://jkl78d5klc16" path="res://src/circle.tscn" id="2_i8uu1"]
+[ext_resource type="Texture2D" uid="uid://2sixywkggwp5" path="res://assets/Book Desk/6.png" id="2_v8wju"]
+[ext_resource type="PackedScene" uid="uid://dkieiqq3enurh" path="res://src/cross.tscn" id="3_ekuau"]
 [ext_resource type="PackedScene" uid="uid://enyl4edfjpqe" path="res://src/board_design.tscn" id="3_qt60o"]
+[ext_resource type="Texture2D" uid="uid://1kjau5s7vilw" path="res://assets/Book Desk/5.png" id="4_5htr7"]
+[ext_resource type="Texture2D" uid="uid://cvplnh5ocdcxn" path="res://assets/Paper/1.png" id="5_vrf5b"]
+[ext_resource type="Texture2D" uid="uid://cgg50pyy6208r" path="res://assets/Stamp/Stamped/1.png" id="8_foh1o"]
+[ext_resource type="FontFile" uid="uid://cjfs0s8hmng2d" path="res://assets/PixelMiddle.ttf" id="8_x20av"]
+[ext_resource type="Texture2D" uid="uid://loqvlj5701tt" path="res://assets/Stamp/Stamped/2.png" id="9_7kl1d"]
+[ext_resource type="Texture2D" uid="uid://cdd0ion3cfim3" path="res://assets/Stamp/Stamped/3.png" id="10_emy4f"]
+[ext_resource type="Texture2D" uid="uid://dt28kcefeth3d" path="res://assets/Stamp/Stamped/4.png" id="11_k0tgw"]
+[ext_resource type="Texture2D" uid="uid://bnwwyluvmlupo" path="res://assets/Stamp/Stamped/5.png" id="12_ovv6o"]
+[ext_resource type="Texture2D" uid="uid://b6iba04if3tom" path="res://assets/Stamp/Stamped/6.png" id="13_csa4b"]
+[ext_resource type="Texture2D" uid="uid://cbg5trrh4ic3v" path="res://assets/Stamp/Stamped/7.png" id="14_kss10"]
+[ext_resource type="Texture2D" uid="uid://crlch5wx3svh8" path="res://assets/Stamp/Stamped/8.png" id="15_r4opf"]
+[ext_resource type="Texture2D" uid="uid://1omxa88iruo0" path="res://assets/Stamp/Stamped/9.png" id="16_r05h2"]
+[ext_resource type="Texture2D" uid="uid://50ssdqeb3b73" path="res://assets/Stamp/Stamped/10.png" id="17_f2kr3"]
+[ext_resource type="Texture2D" uid="uid://d2gmpua7e8qlt" path="res://assets/Stamp/Stamped/11.png" id="18_34eer"]
+[ext_resource type="Texture2D" uid="uid://p4csysavb5wa" path="res://assets/Stamp/Stamped/12.png" id="19_yb0hv"]
+[ext_resource type="Texture2D" uid="uid://mfh7wdhdxmce" path="res://assets/Stamp/Stamped/13.png" id="20_qkprm"]
+[ext_resource type="Texture2D" uid="uid://dkefuicyym01t" path="res://assets/Stamp/Stamped/14.png" id="21_n06gq"]
+[ext_resource type="Texture2D" uid="uid://b72osjweeae40" path="res://assets/Stamp/Stamped/15.png" id="22_pl4tg"]
+[ext_resource type="Texture2D" uid="uid://bhny8x6tdj3tk" path="res://assets/Stamp/Stamped/16.png" id="23_u13bo"]
+[ext_resource type="Texture2D" uid="uid://df4k55q7m5gl4" path="res://assets/Stamp/Stamped/17.png" id="24_7daxd"]
+[ext_resource type="Texture2D" uid="uid://cnts5kdrgr7yc" path="res://assets/Stamp/Stamped/18.png" id="25_w44fs"]
+[ext_resource type="Texture2D" uid="uid://duni3ogq6u6s" path="res://assets/Stamp/Stamped/19.png" id="26_84vid"]
+[ext_resource type="Texture2D" uid="uid://c57quueqh7x0j" path="res://assets/Stamp/Stamped/20.png" id="27_orw5u"]
+[ext_resource type="Texture2D" uid="uid://cevgpmss0koss" path="res://assets/game_over/1.png" id="28_2vckp"]
+[ext_resource type="FontFile" uid="uid://u7qtug5i1byw" path="res://assets/ThaleahFat.ttf" id="29_0mcfe"]
+[ext_resource type="Texture2D" uid="uid://c7y8hltn6u8wt" path="res://assets/o.png" id="31_2eb33"]
+[ext_resource type="Texture2D" uid="uid://dvsqlk0m50o6n" path="res://assets/winner.png" id="31_pojh1"]
+[ext_resource type="Texture2D" uid="uid://dio6ljoyc5v5y" path="res://assets/x.png" id="32_a87l5"]
+[ext_resource type="AudioStream" uid="uid://cb4osyg3w5jv" path="res://stamp.wav" id="34_lnw4n"]
+[ext_resource type="AudioStream" uid="uid://d0jmlya0ok3wj" path="res://button.wav" id="35_a64k3"]
+[ext_resource type="AudioStream" uid="uid://d1a5e02pn4ywe" path="res://bgm_loop.wav" id="36_chfee"]
+[ext_resource type="AudioStream" uid="uid://ttg4mir22jhu" path="res://drop.wav" id="37_j05xe"]
+
+[sub_resource type="Animation" id="Animation_5ij7r"]
+resource_name = "game_over"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1512, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lysim"]
+resource_name = "play_again"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1512, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_204rv"]
+_data = {
+"game_over": SubResource("Animation_5ij7r"),
+"play_again": SubResource("Animation_lysim")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lp765"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_bddqp"]
+line_spacing = 5.0
+font = ExtResource("29_0mcfe")
+font_size = 100
+font_color = Color(0.964706, 0.831373, 0.552941, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6kk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_foh1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7kl1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_emy4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k0tgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ovv6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_csa4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kss10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_r4opf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_r05h2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_f2kr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_34eer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_yb0hv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qkprm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_n06gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_n06gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_pl4tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_u13bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7daxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_w44fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_84vid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_orw5u")
+}],
+"loop": false,
+"name": &"stamp",
+"speed": 30.0
+}]
+
+[sub_resource type="Animation" id="Animation_iwj74"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Camera2D/drop:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_4nxvb"]
+resource_name = "drop"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(178.188, -900), Vector2(178.188, -138), Vector2(178.188, -128), Vector2(178.188, -138)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Camera2D/drop:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o4n5x"]
+_data = {
+"RESET": SubResource("Animation_iwj74"),
+"drop": SubResource("Animation_4nxvb")
+}
+
+[sub_resource type="Theme" id="Theme_5rnd6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rr3hx"]
+texture = ExtResource("2_v8wju")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8wj0b"]
+texture = ExtResource("4_5htr7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a7ps5"]
+texture = ExtResource("2_v8wju")
+modulate_color = Color(1, 1, 1, 0.639216)
+
 [node name="Main" type="Node"]
 script = ExtResource("1_rermx")
+circle_scene = ExtResource("2_i8uu1")
+cross_scene = ExtResource("3_ekuau")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="button" type="AudioStreamPlayer2D" parent="Camera2D"]
+stream = ExtResource("35_a64k3")
+bus = &"SFX"
+
+[node name="drop" type="AudioStreamPlayer2D" parent="Camera2D"]
+stream = ExtResource("37_j05xe")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+"": SubResource("AnimationLibrary_204rv")
+}
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1436, 344)
+scale = Vector2(4.38542, 2)
+texture = ExtResource("2_v8wju")
+
+[node name="Board" type="Sprite2D" parent="."]
+modulate = Color(0.909804, 0.803922, 0.658824, 1)
+position = Vector2(540, 370)
+scale = Vector2(1.40625, 1.32143)
+texture = ExtResource("2_v8wju")
 
 [node name="Board_Design" parent="." instance=ExtResource("3_qt60o")]
 position = Vector2(352, 344)
@@ -58,6 +298,184 @@ position = Vector2(520, 512)
 scale = Vector2(7.505, 7.505)
 shape = SubResource("RectangleShape2D_lp765")
 
+[node name="hud" type="Sprite2D" parent="."]
+position = Vector2(859, 413.25)
+scale = Vector2(0.421875, 0.490179)
+texture = ExtResource("4_5htr7")
+
+[node name="paper" type="Sprite2D" parent="hud"]
+position = Vector2(-54.5183, 3.57025)
+rotation = -0.0913014
+scale = Vector2(1.09267, 0.775372)
+skew = -0.0269231
+texture = ExtResource("5_vrf5b")
+
+[node name="paper2" type="Sprite2D" parent="hud"]
+position = Vector2(61.6298, 26.011)
+rotation = -0.06519
+scale = Vector2(1.09333, 0.774767)
+skew = -0.0193014
+texture = ExtResource("5_vrf5b")
+flip_h = true
+
+[node name="marker_paper" type="Sprite2D" parent="hud"]
+position = Vector2(-0.0012207, 15.8035)
+rotation = 0.00537399
+scale = Vector2(1.09402, 0.774139)
+skew = 0.00159776
+texture = ExtResource("5_vrf5b")
+
+[node name="Circle" parent="hud/marker_paper" instance=ExtResource("2_i8uu1")]
+scale = Vector2(10, 10)
+
+[node name="Cross" parent="hud/marker_paper" instance=ExtResource("3_ekuau")]
+scale = Vector2(10, 10)
+
+[node name="Label" type="Label" parent="hud"]
+offset_left = -263.111
+offset_top = -247.359
+offset_right = 280.889
+offset_bottom = -149.359
+text = "Next player:"
+label_settings = SubResource("LabelSettings_bddqp")
+
+[node name="Markers" type="Node" parent="."]
+
+[node name="animated_stamp" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_r6kk8")
+animation = &"stamp"
+offset = Vector2(-16.715, 16.69)
+
+[node name="game_over" type="Sprite2D" parent="."]
+modulate = Color(1, 0.878431, 0.658824, 1)
+position = Vector2(2053.8, 345.768)
+scale = Vector2(1.33824, 1.0794)
+texture = ExtResource("2_v8wju")
+
+[node name="winner" type="Sprite2D" parent="game_over"]
+modulate = Color(0.305882, 0.305882, 0.305882, 1)
+position = Vector2(2.78418, -144.114)
+scale = Vector2(2, 2.48)
+texture = ExtResource("28_2vckp")
+
+[node name="winner_holder" type="Sprite2D" parent="game_over"]
+position = Vector2(178.188, -138)
+scale = Vector2(0.835256, 1.03555)
+texture = ExtResource("31_pojh1")
+
+[node name="O" type="Sprite2D" parent="game_over/winner_holder"]
+visible = false
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(7, 7)
+texture = ExtResource("31_2eb33")
+
+[node name="X" type="Sprite2D" parent="game_over/winner_holder"]
+visible = false
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(7, 7)
+texture = ExtResource("32_a87l5")
+
+[node name="badge" type="AnimationPlayer" parent="game_over/winner_holder"]
+libraries = {
+"": SubResource("AnimationLibrary_o4n5x")
+}
+
+[node name="Label" type="Label" parent="game_over"]
+offset_left = -277.0
+offset_top = -177.0
+offset_right = -115.0
+offset_bottom = -79.0
+text = "winner:"
+label_settings = SubResource("LabelSettings_bddqp")
+
+[node name="Timer" type="Timer" parent="game_over"]
+process_callback = 0
+wait_time = 0.7
+one_shot = true
+
+[node name="reset" type="Button" parent="."]
+offset_left = 912.0
+offset_top = 14.0
+offset_right = 1055.0
+offset_bottom = 80.0
+theme = SubResource("Theme_5rnd6")
+theme_override_colors/font_color = Color(0.643137, 0.439216, 0.298039, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0.423529, 0.329412, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.643137, 0.439216, 0.298039, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_x20av")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_rr3hx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8wj0b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a7ps5")
+text = "reset"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 928.0
+offset_top = 104.0
+offset_right = 1054.0
+offset_bottom = 170.0
+theme = SubResource("Theme_5rnd6")
+theme_override_colors/font_color = Color(0.643137, 0.439216, 0.298039, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0.423529, 0.329412, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.643137, 0.439216, 0.298039, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_x20av")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_rr3hx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8wj0b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a7ps5")
+text = "Menu"
+
+[node name="main_menu" type="Button" parent="."]
+offset_left = 2120.0
+offset_top = 440.0
+offset_right = 2402.0
+offset_bottom = 506.0
+theme = SubResource("Theme_5rnd6")
+theme_override_colors/font_color = Color(0.643137, 0.439216, 0.298039, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0.423529, 0.329412, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.643137, 0.439216, 0.298039, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_x20av")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_rr3hx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8wj0b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a7ps5")
+text = "main menu"
+
+[node name="play_again" type="Button" parent="."]
+offset_left = 1728.0
+offset_top = 440.0
+offset_right = 2024.0
+offset_bottom = 506.0
+theme = SubResource("Theme_5rnd6")
+theme_override_colors/font_color = Color(0.643137, 0.439216, 0.298039, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0.423529, 0.329412, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.643137, 0.439216, 0.298039, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_x20av")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_rr3hx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8wj0b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a7ps5")
+text = "Play again"
+
+[node name="stomp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_lnw4n")
+bus = &"SFX"
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("36_chfee")
+autoplay = true
+bus = &"BGM"
+
 [connection signal="released" from="Board_Design/Buttons/1" to="." method="_on_1_released"]
 [connection signal="released" from="Board_Design/Buttons/2" to="." method="_on_2_released"]
 [connection signal="released" from="Board_Design/Buttons/3" to="." method="_on_3_released"]
@@ -67,3 +485,11 @@ shape = SubResource("RectangleShape2D_lp765")
 [connection signal="released" from="Board_Design/Buttons/7" to="." method="_on_7_released"]
 [connection signal="released" from="Board_Design/Buttons/8" to="." method="_on_8_released"]
 [connection signal="released" from="Board_Design/Buttons/9" to="." method="_on_9_released"]
+[connection signal="animation_finished" from="animated_stamp" to="." method="_on_animated_stamp_animation_finished"]
+[connection signal="timeout" from="game_over/Timer" to="." method="_on_timer_timeout"]
+[connection signal="button_up" from="reset" to="." method="_on_reset_button_up"]
+[connection signal="button_up" from="quit" to="." method="_on_quit_button_up"]
+[connection signal="button_down" from="main_menu" to="." method="_on_main_menu_button_down"]
+[connection signal="button_up" from="main_menu" to="." method="_on_main_menu_button_up"]
+[connection signal="button_down" from="play_again" to="." method="_on_play_again_button_down"]
+[connection signal="button_up" from="play_again" to="." method="_on_play_again_button_up"]
