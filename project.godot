@@ -13,6 +13,7 @@ config_version=5
 config/name="PixTacToe"
 run/main_scene="res://src/menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 0)
 boot_splash/show_image=false
 boot_splash/image="res://assets/icon.png"
 boot_splash/fullsize=false
