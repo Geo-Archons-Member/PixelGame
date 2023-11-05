@@ -38,7 +38,6 @@ var col_sum : int
 var diagonal1_sum : int
 var diagonal2_sum : int
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	new_game()
 
@@ -139,14 +138,12 @@ func new_game():
 			child.queue_free()
 
 func check_win():
-	#add up the markers in each ros, column and diagonal
 	for i in len(grid_data):
 		row_sum = grid_data[i][0] + grid_data[i][1] + grid_data[i][2]
 		col_sum = grid_data[0][i] + grid_data[1][i] + grid_data[2][i]
 		diagonal1_sum = grid_data[0][0] + grid_data[1][1] + grid_data[2][2]
 		diagonal2_sum = grid_data[0][2] + grid_data[1][1] + grid_data[2][0]
 	
-		#check if either player has all of the markers in one line
 		if row_sum == 3 or col_sum == 3 or diagonal1_sum == 3 or diagonal2_sum == 3:
 			winner = 1
 		elif row_sum == -3 or col_sum == -3 or diagonal1_sum == -3 or diagonal2_sum == -3:
