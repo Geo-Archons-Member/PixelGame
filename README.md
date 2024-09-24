@@ -33,3 +33,8 @@ Players take turns placing their marks on the 3x3 grid. The first player to get 
 - https://kronbits.itch.io/freesfx
 - https://humblepixel.itch.io/pocket-inventory-series-5-player-status/devlog/511319/free-paper-ui-system
 - https://www.youtube.com/watch?v=g1Q_2n54tCk&ab_channel=8BitBoi
+
+
+**
+A project I made using the godot engine as alternative for sketchware. The project needs a sketchware made tiktaktoe game but the app has long been depricated so it doesn't work in my custom roms.
+Sketchware Tiktaktoe code
